@@ -115,10 +115,10 @@ footer{
     margin-right: 5px;
     margin-left: 5px;
     width: 90%;
+    display: grid;
+    align-items: center;
 }
 .entry{
-    /* background-color: #EAEAF0; */
-    /* border-radius: 5px; */
     width: 35vw;
     margin:5px;
     padding: 5px;
@@ -143,16 +143,27 @@ footer{
 
 }
 
-
 .inputBox{
-    width: 18px;
-    height: 18px;    
+    width: 2em;
+    height: 2em;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   -ms-appearance: none;
+   appearance: none;
+   border: 2px solid #25d4ea;
+   border-radius: 18px;
+   /* vertical-align: middle; */
+   background-color:white;
+   background-position:-10em -10em;
+   transition:.3s  ease;
 }
-/*
-.inputBox:checked{
-    background-color: black;
-    border: white;
-}*/
+.inputBox:checked:after{
+    background-image: url("times-solid.svg");
+    background-repeat:no-repeat;
+    background-size:23px 23px;
+    content: '';
+}
+
 
 @media only screen and (min-width:700px){
 header{
