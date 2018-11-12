@@ -107,36 +107,6 @@ socket.on('emit-task',function(data){
 $(document).on('click', '#submitButton', submitFunc);
 
 
-
-//////////delete Function////////////////
-// const deleteFunc = function (e) {
-//     e.preventDefault();
-//     console.log('get in delete');
-//     let parent = $(this).parent().parent().text();
-//     const selEntry = {
-//         newInput: parent
-//     };
-//     console.log(selEntry);
-//     $.ajax({ url: '/api/list', method: 'DELETE', data: selEntry }).then(
-//         function (result) {
-//             console.log('get in delete result function');  
-//             alert('werwer');
-//             if (result) {
-//                 console.log('input data in delete method ajax', data);
-//                 alert('You just deleted an entry!');
-//             } else {
-//                 alert("There's a problem with your submision");
-//             }
-
-//         }
-//     );
-
-// };
-
-
-// $(document).on('click', '.delEntry', deleteFunc);
-
-
 /////////put function: for update and delete/////////////
 
 const putFunc = function (e) {

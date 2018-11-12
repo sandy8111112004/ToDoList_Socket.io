@@ -29,20 +29,6 @@ module.exports = function (app) {
 
     });
 
-
-    // app.delete('/api/list', function (req, res) {
-    //     ToDoDB.deleteOne(req.body).then(
-    //         function () {
-    //             res.json({success: true});
-    //         }
-    //     ).catch(
-    //         function (err) {
-    //             res.json(err);
-    //         }
-    //     )
-    // });
-
-
     app.put('/api/list', function (req, res) {
         ToDoDB.findOne(req.body)
             .then(

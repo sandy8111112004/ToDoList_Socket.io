@@ -5,11 +5,7 @@ const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
-// io.set('transports', ['websocket']);
-
 const PORT = process.env.PORT || 3000;
-// const server =app.listen(PORT);
-// const io = require('socket.io').listen(server);
 
 app.use(express.urlencoded({extended: true}));
 // app.use(express.json());
@@ -18,14 +14,14 @@ app.use(express.static("public"));
 require('./sockets/todo-sockets')(io);
 
 //mongo database connection
-// mongoose.Promise = global.Promise;
-// mongoose.connect(
-//     process.env.MONGODB_URI || "mongodb://mingDatabase:password123456@dbh35.mlab.com:27357/heroku_mhzj4w0n",
-//     {
-//         userMongoClient: true
-//     }
-// );
-mongoose.connect("mongodb://localhost/ToDoDBSocket",{useNewUrlParser: true});
+mongoose.Promise = global.Promise;
+mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://mingDatabase:password123456@dbh35.mlab.com:27357/heroku_mhzj4w0n",
+    {
+        userMongoClient: true
+    }
+);
+//mongoose.connect("mongodb://localhost/ToDoDBSocket",{useNewUrlParser: true});
 
 //routes
 //////////////////////api///////////////////////////
