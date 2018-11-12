@@ -9,24 +9,31 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
     <script src="/js/app.js"></script>
-    <title>Ming's To Do List</title>
+    <title>To Do List</title>
 </head>
 
 <body>
-    <header>
-        <h6>Ming's to do list</h6>
-    </header>
     <main>
+        <header>
+            <h6 id='day'>Sun</h6>
+            <div id='date'>Nov 12</div>
+            <div id='year'>2018</div>
+        </header>
         <div class='box1'>
             <form>
                 <div class='horCenter'>
                     <div id='inputDomain'>
-                    <input type="text" id="newInput" placeholder="Add a to do" style="width: 300px"/>
-                    <span><button type='submit' id="submitButton"><img src='plus-square-regular.svg' id='addIcon'/></button></span>
+                        <input type="text" id="newInput" placeholder="Add a to do" />
+                        <span>
+                            <button type='submit' id="submitButton">
+                                <img src='plus-square-regular.svg' id='addIcon' />
+                            </button>
+                        </span>
                     </div>
                     <br>
-                    <hr>
                     <br>
                 </div>
             </form>
@@ -36,12 +43,11 @@
             </form>
         </div>
     </main>
-        <footer>
-            <a href="/api/list" style="color: black">Api To-Do-List</a> 
-            <!--|<a href="/api/clear">api clear list</a>-->
-        </footer>
-    
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js'></script>
+    <footer>
+        <a href="/api/list" style="color: black">Api To-Do-List</a>
+        <!--|<a href="/api/clear">api clear list</a>-->
+    </footer>
+
 </body>
 
 </html>

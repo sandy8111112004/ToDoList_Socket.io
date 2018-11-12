@@ -1,6 +1,6 @@
 const socket = io();
-
-
+// const socket = io({transports: ['websocket'], upgrade: false});
+// const moment = require('moment');
 //////////////////display function
 const render = function () {
     runListQuery();
@@ -20,9 +20,9 @@ const renderList = function (outputPlace, dataList) {
             renderCheck = 'unchecked';
         }
         temp.append(
-            $(`<input type='checkbox' class='inputBox' ${renderCheck}>`),
             tempSpan,
-            tempButton
+            $(`<input type='checkbox' class='inputBox' ${renderCheck}>`)
+            // tempButton
         );
         output.append(temp);
     });
@@ -37,6 +37,20 @@ const runListQuery = function () {
 }
 
 render();
+
+
+const renderDate = function(){
+    const day = moment().format('dddd');
+    const date =moment().format('MMM');
+    const year = moment().format('YYYY');
+    $('#day').innerHTML =`${day}`;
+    $('#date').innerHTML=`${date}`;
+    $('#year').innerHTML=`${year}`;
+
+}
+
+
+renderDate();
 
 ///////////////////////////submit function
 const submitFunc = function (e) {
@@ -66,6 +80,7 @@ const submitFunc = function (e) {
 
         }
     );
+    console.log('before new-task emit',newEntry);
     socket.emit('new-task',newEntry);
 };
 console.log('in app.js');

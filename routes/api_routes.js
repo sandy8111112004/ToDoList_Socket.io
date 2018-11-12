@@ -1,4 +1,4 @@
-
+const path = require('path');
 const ToDoDB = require("../data/list.js");
 
 
@@ -58,20 +58,20 @@ module.exports = function (app) {
                                 res.json(err);
                             }
                         )
-
                     }else{
-                        ToDoDB.updateOne(req.body, { inputBox: !status })
-                            .then(
-                                function (data) {
-                                    res.json(data);
-                                }
-                            ).catch(
-                                function (err) {
-                                    res.json(err);
-                                }
-                            );
+                    ToDoDB.updateOne(req.body, { inputBox: !status })
+                        .then(
+                            function (data) {
+                                res.json(data);
+                            }
+                        ).catch(
+                            function (err) {
+                                res.json(err);
+                            }
+                        );
                     }
                 }
+
             );
 
     });
@@ -79,7 +79,7 @@ module.exports = function (app) {
 
     //////////////////////////////html//
 
-    app.get('*', function (req, res) {
+    app.get('/todo', function (req, res) {
         res.sendFile(path.join(__dirname, '../public/index.html'))
     });
 

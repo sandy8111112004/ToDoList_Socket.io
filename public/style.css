@@ -1,17 +1,13 @@
 body {
     display: grid;
-    grid-template-rows: 100px 1fr 80px;
+    grid-template-rows: 1fr 80px;
     grid-template-columns: 1fr;
     height: 98vh;
     font-family: 'Open Sans', sans-serif;
+    background-color: #B2BABB;
 }
-
-h6 {
-    font-size: 40px;
-}
-
 #addIcon{
-    height: 18px;
+    height: 28px;
 }
 #submitButton{
     background-color: white;
@@ -23,18 +19,6 @@ h6 {
     border: none;
     cursor: pointer;
 }
-
-
-header {
-    display: grid;
-    grid-row: span 1;
-    grid-column: span 1;
-    background-image: linear-gradient(90deg, #ab16b5 0%, #c577d6 32%, #6a37b1 100%);
-    align-items: center;
-    color: white;   
-    padding: 10px;
-}
-
 main{
     color: black;
     padding: 10px;
@@ -42,7 +26,53 @@ main{
     justify-content: center;
     grid-row:  span 1;
     grid-column: span 1;
+    grid-template-rows: 50px 1fr;
+    grid-template-columns: 1fr;
+    width: 50vw;
+    margin-left: 25vw;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow:0px 2px 5px 5px #666666;
 }
+
+header {
+    display: grid;
+    grid-row: span 1;
+    grid-column: span 1;
+    align-items: center;
+    color:#474748;   
+    padding-top: 20px;
+    padding-left: 5px;
+    font-size: 18px;
+    margin-left: 7.5vw;
+    height: 40px;
+    grid-template-columns: 35% 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+h6 {
+    font-size: 40px;
+}
+#day{
+    display: grid;
+    grid-column: span 1;
+    grid-row: span 2;
+}
+#date, #year{
+    display: grid;
+    grid-column: span 1;
+    grid-row: span 1;
+    font-size: 14px;
+}
+
+.box1 {
+    display: grid;
+    grid-column: span 1;
+    grid-row: span 1;
+    padding: 10px;
+    grid-template-rows: 80px 1fr;
+}
+
 footer{
     color: black;
     font-size: 14px;
@@ -53,34 +83,32 @@ footer{
     justify-content: center;
 }
 
-hr { 
-    display: block;
-    margin-top: 0.6em;
-    margin-bottom: 0.6em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    color: #666666;
-    background-color: #666666;
-    width: 400px;
-    height: 1px;
-}
 
 #newInput{
-    border-radius: 8px;
     font-size: 18px;
-    border-color: #ab16b5;
+    border: 0px solid;
+    border-bottom: 2px solid #666666;
+    padding:5px;
+    margin-left: 5px;
+    width: 90%;
 }
 #displayList{
     display: grid;
-    justify-content: center;
+    justify-content: center;    
 
 }
-
 
 .horCenter{
     display: grid;
     justify-content: center;
+}
+#inputDomain{
+    width: 35vw;
+    margin:5px;
+    padding: 5px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 85% 15%; 
 }
 .entryText{
     font-size: 18px;
@@ -89,14 +117,14 @@ hr {
     width: 90%;
 }
 .entry{
-    background-color: #EAEAF0;
-    border-radius: 5px;
-    width: 300px;
+    /* background-color: #EAEAF0; */
+    /* border-radius: 5px; */
+    width: 35vw;
     margin:5px;
     padding: 5px;
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 10% 75% 10%; 
+    grid-template-columns: 85% 15%; 
 }
 .entry input{
     display: grid;
@@ -114,15 +142,7 @@ hr {
     grid-column: span 1;
 
 }
-/*.entry > * {
-    width: 100%;
-}*/
 
-/*.left {
-    display: grid;
-    justify-content: flex-end;
-    text-align: end;
-}*/
 
 .inputBox{
     width: 18px;
@@ -134,19 +154,11 @@ hr {
     border: white;
 }*/
 
-@media only screen and (min-width:600px){
-
-.box1 {
-    border:solid;
-    padding: 10px;
-    border-color: #c577d6;
-    border-radius: 10px;
-}
-hr{
-    width: 500px;
-}
-.entry{
-    width: 400px;
+@media only screen and (min-width:700px){
+header{
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 }
