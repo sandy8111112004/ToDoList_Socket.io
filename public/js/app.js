@@ -37,12 +37,13 @@ render();
 
 
 const renderDate = function(){
-    const day = moment().format('dddd');
-    const date =moment().format('MMM');
+    const day = moment().format('ddd');
+    const date =moment().format('MMM D');
     const year = moment().format('YYYY');
-    $('#day').innerHTML =`${day}`;
-    $('#date').innerHTML=`${date}`;
-    $('#year').innerHTML=`${year}`;
+    $('#day').text(`${day}`);
+    $('#date').text(`${date}`);
+    $('#year').text(`${year}`);
+    console.log(day,date,year);
 
 }
 
