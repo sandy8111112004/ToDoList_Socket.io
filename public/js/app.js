@@ -1,5 +1,4 @@
 const socket = io();
-// const socket = io({transports: ['websocket'], upgrade: false});
 // const moment = require('moment');
 //////////////////display function
 const render = function () {
@@ -10,8 +9,6 @@ const renderList = function (outputPlace, dataList) {
     dataList.forEach(element => {
         const output = $(outputPlace);
         const temp = $(`<div class='entry'>`);
-        const tempButton = $('<span class=left>');
-        tempButton.append($("<button type='submit' class='delEntry'>").append($("<img src='./trash-alt-solid.svg' style='height:18px;'/>")));
         const tempSpan = $("<span class='entryText'>").text(`${element.newInput}`);
         let renderCheck = 'unchecked';
         if(element.inputBox){
@@ -22,7 +19,7 @@ const renderList = function (outputPlace, dataList) {
         temp.append(
             tempSpan,
             $(`<input type='checkbox' class='inputBox' ${renderCheck}>`)
-            // tempButton
+
         );
         output.append(temp);
     });
@@ -88,41 +85,26 @@ console.log('in app.js');
 socket.on('emit-task',function(data){
         console.log('emit-task',data);
         //render task here
+        const output = $('#displayList');
+        const temp = $(`<div class='entry'>`);
+        const tempSpan = $("<span class='entryText'>").text(`${data.newInput}`);
+        let renderCheck = 'unchecked';
+        if(data.inputBox){
+            renderCheck = 'checked';
+        }else{
+            renderCheck = 'unchecked';
+        }
+        temp.append(
+            tempSpan,
+            $(`<input type='checkbox' class='inputBox' ${renderCheck}>`)
+
+        );
+        output.append(temp);
     }
 )
 
 
 $(document).on('click', '#submitButton', submitFunc);
-
-
-
-//////////delete Function////////////////
-// const deleteFunc = function (e) {
-//     e.preventDefault();
-//     console.log('get in delete');
-//     let parent = $(this).parent().parent().text();
-//     const selEntry = {
-//         newInput: parent
-//     };
-//     console.log(selEntry);
-//     $.ajax({ url: '/api/list', method: 'DELETE', data: selEntry }).then(
-//         function (result) {
-//             console.log('get in delete result function');  
-//             alert('werwer');
-//             if (result) {
-//                 console.log('input data in delete method ajax', data);
-//                 alert('You just deleted an entry!');
-//             } else {
-//                 alert("There's a problem with your submision");
-//             }
-
-//         }
-//     );
-
-// };
-
-
-// $(document).on('click', '.delEntry', deleteFunc);
 
 
 /////////put function: for update and delete/////////////
@@ -153,8 +135,29 @@ const putFunc = function (e) {
 socket.on('emit-updateTask',function(data){
     console.log('emit-updateTask',data);
     //update display here
+    // let checkBox = $(this.)
+    // $.ajax({ url: "/api/list", method: "GET" }).then(
+    //     function (e) {
+    //         updateList(e,data);
+    //     }
+    // );
+
+    // if(!data.inputBox){
+    //     $(this).parent().text('');
+    // }else{
+    //     $(this).parent().childNodes().checked=true;
+    // }
+    location.reload();
+})
+
+const updateList=function(dataList,dataText){
+    const result = dataList.find(e=>{
+        e.newInput===dataText.newInput;
+    });
+    return result;
+    if(result.inputBox){
     }
-)
+}
 
 
 $(document).on('click', '.inputBox', putFunc);

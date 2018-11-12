@@ -14,13 +14,9 @@ body {
     border: none;
     cursor: pointer;
 }
-.delEntry{
-    background-color: #EAEAF0;
-    border: none;
-    cursor: pointer;
-}
+
 main{
-    color: black;
+    color: #474748;
     padding: 10px;
     display: grid;
     justify-content: center;
@@ -47,11 +43,12 @@ header {
     font-size: 18px;
     margin-left: 7.5vw;
     height: 40px;
-    grid-template-columns: 35% 1fr;
+    grid-template-columns: 45% 1fr;
     grid-template-rows: 1fr 1fr;
 }
 h6 {
     font-size: 40px;
+    font-weight: 700;
 }
 #day{
     display: grid;
@@ -115,10 +112,10 @@ footer{
     margin-right: 5px;
     margin-left: 5px;
     width: 90%;
+    display: grid;
+    align-items: center;
 }
 .entry{
-    /* background-color: #EAEAF0; */
-    /* border-radius: 5px; */
     width: 35vw;
     margin:5px;
     padding: 5px;
@@ -143,16 +140,28 @@ footer{
 
 }
 
-
 .inputBox{
-    width: 18px;
-    height: 18px;    
+    width: 2em;
+    height: 2em;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   -ms-appearance: none;
+   appearance: none;
+   border: 2px solid #25d4ea;
+   border-radius: 18px;
+   /* vertical-align: middle; */
+   background-color:white;
+   background-position:-10em -10em;
+   transition:.3s  ease;
+   cursor: pointer;
 }
-/*
-.inputBox:checked{
-    background-color: black;
-    border: white;
-}*/
+.inputBox:checked:after{
+    background-image: url("times-solid.svg");
+    background-repeat:no-repeat;
+    background-size:23px 23px;
+    content: '';
+}
+
 
 @media only screen and (min-width:700px){
 header{
