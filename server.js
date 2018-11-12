@@ -16,7 +16,8 @@ require('./sockets/todo-sockets')(io);
 //mongo database connection
 mongoose.Promise = global.Promise;
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://mingDatabase:password123456@dbh35.mlab.com:27357/heroku_mhzj4w0n",
+    process.env.MONGODB_URI || "mongodb://mingsocket:password123456@ds033679.mlab.com:33679/heroku_jjfd3b5s",
+    //"mongodb://mingDatabase:password123456@dbh35.mlab.com:27357/heroku_mhzj4w0n",
     {
         userMongoClient: true
     }
