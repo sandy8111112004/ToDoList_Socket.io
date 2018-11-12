@@ -1,0 +1,152 @@
+body {
+    display: grid;
+    grid-template-rows: 100px 1fr 80px;
+    grid-template-columns: 1fr;
+    height: 98vh;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h6 {
+    font-size: 40px;
+}
+
+#addIcon{
+    height: 18px;
+}
+#submitButton{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+.delEntry{
+    background-color: #EAEAF0;
+    border: none;
+    cursor: pointer;
+}
+
+
+header {
+    display: grid;
+    grid-row: span 1;
+    grid-column: span 1;
+    background-image: linear-gradient(90deg, #ab16b5 0%, #c577d6 32%, #6a37b1 100%);
+    align-items: center;
+    color: white;   
+    padding: 10px;
+}
+
+main{
+    color: black;
+    padding: 10px;
+    display: grid;
+    justify-content: center;
+    grid-row:  span 1;
+    grid-column: span 1;
+}
+footer{
+    color: black;
+    font-size: 14px;
+    padding:10px;
+    display: grid;
+    grid-row: span 1;
+    grid-column: span 1;
+    justify-content: center;
+}
+
+hr { 
+    display: block;
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    color: #666666;
+    background-color: #666666;
+    width: 400px;
+    height: 1px;
+}
+
+#newInput{
+    border-radius: 8px;
+    font-size: 18px;
+    border-color: #ab16b5;
+}
+#displayList{
+    display: grid;
+    justify-content: center;
+
+}
+
+
+.horCenter{
+    display: grid;
+    justify-content: center;
+}
+.entryText{
+    font-size: 18px;
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 90%;
+}
+.entry{
+    background-color: #EAEAF0;
+    border-radius: 5px;
+    width: 300px;
+    margin:5px;
+    padding: 5px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 10% 75% 10%; 
+}
+.entry input{
+    display: grid;
+    grid-row: span 1;
+    grid-column: span 1;
+}
+.left{
+    display: grid;
+    grid-row: span 1;
+    grid-column: span 1;
+}
+.entryText{
+    display: grid;
+    grid-row: span 1;
+    grid-column: span 1;
+
+}
+/*.entry > * {
+    width: 100%;
+}*/
+
+/*.left {
+    display: grid;
+    justify-content: flex-end;
+    text-align: end;
+}*/
+
+.inputBox{
+    width: 18px;
+    height: 18px;    
+}
+/*
+.inputBox:checked{
+    background-color: black;
+    border: white;
+}*/
+
+@media only screen and (min-width:600px){
+
+.box1 {
+    border:solid;
+    padding: 10px;
+    border-color: #c577d6;
+    border-radius: 10px;
+}
+hr{
+    width: 500px;
+}
+.entry{
+    width: 400px;
+}
+
+}
